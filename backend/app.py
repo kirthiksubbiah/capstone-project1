@@ -1,3 +1,5 @@
+# awesome-form-app/backend/app.py
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -7,7 +9,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Use environment variable or fallback local
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'mysql+pymysql://admin:password@localhost:3306/userdata')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
