@@ -1,0 +1,6 @@
+# awesome-form-app/backend/requirements.txt
+
+flask
+flask_sqlalchemy
+flask_cors
+pymysql
