@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: <your-ecr-backend-image>  # replace this
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              value: "mysql+pymysql://admin:<your-password>@<rds-endpoint>:3306/userdata"
